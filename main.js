@@ -10,8 +10,8 @@ const app = Vue.createApp({
               { id: 2234, color: 'green', image: './assets/images/socks_green.jpg'},
               { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg'}
             ],
-            inStock: false,
-            cart:0
+            inStock: true,
+            cart:11
         }
     },
     methods:  {
@@ -22,7 +22,9 @@ const app = Vue.createApp({
             this.image = image
         },
         removeFromCart() {
-            this.cart --;
+            if(this.cart>0) {
+                this.cart --;
+            }
         }
     }
 })
