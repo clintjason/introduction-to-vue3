@@ -11,20 +11,27 @@
   <body>
     <div id="app">
         <div class="nav-bar"></div>
-      
+        
         <div class="product-display">
           <div class="product-container">
             <div class="product-image">
-              <!-- image goes here -->
-              <img v-bind:src="image"/>
+              <img v-bind:src="image">
             </div>
             <div class="product-info">
               <h1>{{ product }}</h1>
-              <a :href="url">Link to Google</a>
+              <p v-if="inStock">In Stock</p>
+              <p v-else>Out of Stock</p>
+              <ul>
+                  <li v-for="detail in details">{{detail}}</li>
+              </ul>
+              <div v-for="variant in variants" :key="variant.id">
+                  {{variant.color}}
+              </div><br/>
+              <div v-for="(size, index) in sizes" :key="index"> {{size}}</div>
             </div>
           </div>
         </div>
-    </div>
+      </div>  
 
     <!-- Import App -->
     <script src="./main.js"></script>
