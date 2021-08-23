@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery Course</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{product}}</h1>
+      <p>{{description + ' ' + product}} </p>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+    <!-- Mount App -->
+    <script>
+        app.mount("#app");
+    </script>
+  </body>
+</html>
