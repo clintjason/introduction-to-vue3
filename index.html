@@ -12,8 +12,12 @@
     <div id="app">
         <div class="nav-bar"></div>
   
-        <div class="cart">Cart({{ cart }})</div>
-        <product-display v-bind:premium="premium"></product-display>
+        <div class="cart">Cart({{ cart.length }})</div>
+        <product-display 
+          v-bind:premium="premium"
+          v-on:add-to-cart="updateCart"
+          @remove-from-cart="removeCart"
+          ></product-display>
     </div>
     <!-- Import App -->
     <script src="./main.js"></script>
